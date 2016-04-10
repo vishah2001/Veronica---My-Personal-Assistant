@@ -21,8 +21,8 @@ public class Main {
 		// Name of system
 		String name = "veronica";
 		
-		// Name of user
-//		String user = "vishal";
+		// User Information
+		// Use UserInfo Class
 		
 		// To start system
 		while (close = true) {
@@ -34,9 +34,13 @@ public class Main {
 			
 			if (input.toLowerCase().contains(name.toLowerCase())) {
 				// Generic greetings
-				System.out.println(Greeting(input, name));
+				System.out.println(Greeting(input));
 				// Greetings based on time of day
-				System.out.println(TDGreeting(input, name));
+				System.out.println(TDGreeting(input));
+				// To start Music
+				System.out.println(Music(input));
+				// To turn off system
+				close = Shutdown(input);
 				
 			}
 			
@@ -44,7 +48,7 @@ public class Main {
 	}
 
 	@SuppressWarnings("unused")
-	public static String Greeting(String given, String name) { // TYPICAL GREETINGS
+	public static String Greeting(String given) { // TYPICAL GREETINGS
 		
 		// List for greetings
 		String[] greeting = {
@@ -53,15 +57,15 @@ public class Main {
 				"hi"
 		};
 		
-		// The number of words in the input
-		int numberOfWords = given.length();
-		
 		// To get input into an array
-		String[] splitInput = given.split("\\s+");
+				String[] splitInput = given.split("\\s+");
+				
+		// The number of words in the input
+		int total = splitInput.length;
 		
-		for (int i = 0; i < numberOfWords; i++) {
+		for (int i = 0; i < total; i++) {
 			if (Arrays.asList(greeting).contains(splitInput[i])) {
-				return "Hello, sir";
+				return "Hello, sir. What can I do for you?";
 			}
 			return "";
 		}
@@ -70,7 +74,7 @@ public class Main {
 	}
 	
 	
-	public static String TDGreeting(String given, String name) { // TIME BASED GREETINGS
+	public static String TDGreeting(String given) { // TIME BASED GREETINGS
 		
 		// List for time greetings
 		String[] TDgreetingList = {
@@ -102,11 +106,71 @@ public class Main {
 		}
 
 			if (points == 2) {
-			return "Good " + TheGreeting + ", sir";
+			return "Good " + TheGreeting + ", sir. Is there anything that I can do for you?";
 		} else {
 			return "";
 		}
 	}
 	
+	public static String Music(String given) { // TIME BASED GREETINGS
+		
+		// List for time greetings
+		String[] MusicStarters = {
+				"play",
+				"start"
+		};
+		
+		String[] MusicTerms = {
+				"music",
+				"tunes"
+		};
 
+		// To get input into an array
+		String[] splitInput = given.split("\\s+");
+		
+		// The number of words in the input
+		int total = splitInput.length;
+		 
+		// To see how many requirements fit the category
+		int points = 0;
+		
+		for (int i = 0; i < total; i++) {
+			if (Arrays.asList(MusicStarters).contains(splitInput[i])) {
+				points++;
+			} else if (Arrays.asList(MusicTerms).contains(splitInput[i])) {
+				points++;
+			}
+		}
+
+			if (points == 2) {
+			return "Playing Music";
+		} else {
+			return "";
+		}
+	}
+	
+	@SuppressWarnings("unused")
+	public static boolean Shutdown(String given) { // SHUTDOWN COMMANDS
+		
+		// List for greetings
+		String[] shutdown = {
+				"turn off",
+				"shutdown"
+		};
+		
+		// To get input into an array
+				String[] splitInput = given.split("\\s+");
+				
+		// The number of words in the input
+		int total = splitInput.length;
+		
+		for (int i = 0; i < total; i++) {
+			if (Arrays.asList(shutdown).contains(splitInput[i])) {
+				return true;
+			}
+			return false;
+		}
+			
+		return false;
+	}
 }
