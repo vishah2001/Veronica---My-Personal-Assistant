@@ -42,7 +42,9 @@ public class Greetings {
 				"morning",
 				"afternoon",
 				"evening",
-				"night"
+				"night",
+				"dawn",
+				"eve"
 		};
 
 		// To get input into an array
