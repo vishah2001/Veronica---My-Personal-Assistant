@@ -15,7 +15,9 @@ public class Shutdown {
 		// List for greetings
 		String[] shutdown = {
 				"turn off",
-				"shutdown"
+				"shutdown",
+				"abort",
+				"go away"
 		};
 		
 		// To get input into an array
