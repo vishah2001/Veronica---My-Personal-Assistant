@@ -13,12 +13,14 @@ public class Music {
 		// List for time greetings
 		String[] MusicStarters = {
 				"play",
-				"start"
+				"start",
+				"me"
 		};
 		
 		String[] MusicTerms = {
 				"music",
-				"tunes"
+				"tunes",
+				"sing for"
 		};
 
 		// To get input into an array

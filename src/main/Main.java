@@ -36,7 +36,7 @@ public class Main {
 			if (input.toLowerCase().contains(name.toLowerCase())) {
 				
 				// Generic greetings
-//				System.out.println(Greeting(input));
+				// System.out.println(Greeting(input));
 				String output = Greetings.Greeting(input);
 				System.out.println(output);
 				// Greetings based on time of day
