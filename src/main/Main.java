@@ -22,8 +22,8 @@ public class Main {
 		// Name of system
 		String name = "veronica";
 		
-		// User Information
-		// Use UserInfo Class
+		// Name of user
+//		String user = "vishal";
 		
 		// To start system
 		while (close = true) {
@@ -36,6 +36,7 @@ public class Main {
 			if (input.toLowerCase().contains(name.toLowerCase())) {
 				
 				// Generic greetings
+<<<<<<< HEAD
 //				System.out.println(Greeting(input));
 				String output = Greetings.Greeting(input);
 				System.out.println(output);
@@ -47,9 +48,84 @@ public class Main {
 				System.out.println(output);
 				// To turn off system
 				close = Shutdown.Shutdown(input);
+=======
+				System.out.println(Greeting(input, name));
+				// Greetings based on time of day
+				System.out.println(TDGreeting(input, name));
+>>>>>>> parent of dfb78fd... Refined Code and Files
 				
 			}
 			
 		}
 	}
+<<<<<<< HEAD
+=======
+
+	@SuppressWarnings("unused")
+	public static String Greeting(String given, String name) { // TYPICAL GREETINGS
+		
+		// List for greetings
+		String[] greeting = {
+				"hey",
+				"hello",
+				"hi"
+		};
+		
+		// The number of words in the input
+		int numberOfWords = given.length();
+		
+		// To get input into an array
+		String[] splitInput = given.split("\\s+");
+		
+		for (int i = 0; i < numberOfWords; i++) {
+			if (Arrays.asList(greeting).contains(splitInput[i])) {
+				return "Hello, sir";
+			}
+			return "";
+		}
+			
+		return "";
+	}
+	
+	
+	public static String TDGreeting(String given, String name) { // TIME BASED GREETINGS
+		
+		// List for time greetings
+		String[] TDgreetingList = {
+				"morning",
+				"afternoon",
+				"evening",
+				"night"
+		};
+
+		// To get input into an array
+		String[] splitInput = given.split("\\s+");
+		
+		// The number of words in the input
+		int total = splitInput.length;
+		 
+		// To see how many requirements fit the category
+		int points = 0;
+		
+		// For greeting
+		String TheGreeting = "";
+		
+		for (int i = 0; i < total; i++) {
+			if (Arrays.asList(TDgreetingList).contains(splitInput[i])) {
+				points++;
+				TheGreeting = splitInput[i];
+			} else if (splitInput[i].toLowerCase().contains("good")) {
+				points++;
+			}
+		}
+
+			if (points == 2) {
+			return "Good " + TheGreeting + ", sir";
+		} else {
+			return "";
+		}
+	}
+	
+
+>>>>>>> parent of dfb78fd... Refined Code and Files
 }

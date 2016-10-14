@@ -15,7 +15,9 @@ public class Greetings {
 		String[] greeting = {
 				"hey",
 				"hello",
-				"hi"
+				"hi",
+				"yo",
+				"top of the morning"
 		};
 		
 		// To get input into an array
